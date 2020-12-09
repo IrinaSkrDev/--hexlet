@@ -24,6 +24,7 @@ class PlayerTest {
 
         final Player player = new Player(null, inputValue);
 
+
         final Figure actualValue = player.getFigure();
         assertEquals(expectedValue, actualValue);
     }
