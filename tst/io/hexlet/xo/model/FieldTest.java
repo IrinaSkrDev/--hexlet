@@ -38,6 +38,21 @@ class FieldTest {
     }
 
     @Test
+    void testSetFigureAlreadyOccupaid() throws Exception {
+        final Field field = new Field();
+        final Point inputPoint = new Point(0, 0);
+        final Figure inputFigure = Figure.X;
+        field.setFigure(inputFigure, inputPoint);
+        try {
+            field.setFigure(inputFigure, inputPoint);
+            fail();
+        } catch (PointAlreadyOccupaidEcxeption e) {
+        }
+
+
+    }
+
+    @Test
     void testGetFigureWhenFigureIsNotSet() throws Exception {
         final Field field = new Field();
         final Point inputPoint = new Point(0, 0);
