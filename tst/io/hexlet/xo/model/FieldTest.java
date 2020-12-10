@@ -25,7 +25,7 @@ class FieldTest {
     // }
 
     @Test
-    void setFigure() throws Exception {
+    void testSetFigure() throws Exception {
         final Field field = new Field();
         final Point inputPoint = new Point(0, 0);
         final Figure inputFigure = Figure.X;
@@ -33,6 +33,46 @@ class FieldTest {
         field.setFigure(inputFigure, inputPoint);
 
         assertEquals(inputFigure, field.getFigure(inputPoint));
+
+
+    }
+
+    @Test
+    void testGetFigureWhenFigureIsNotSet() throws Exception {
+        final Field field = new Field();
+        final Point inputPoint = new Point(0, 0);
+
+        assertNull(field.getFigure(inputPoint));
+
+
+    }
+
+    @Test
+    void testGetFigureWhenXLessZero() throws Exception {
+        final Field field = new Field();
+        final Point inputPoint = new Point(-1, 0);
+
+        try {
+            field.getFigure(inputPoint);
+            fail();
+        } catch {
+            final InvalidPointException e
+        }
+
+
+    }
+
+    @Test
+    void testGetFigureWhenYLessZero() throws Exception {
+        final Field field = new Field();
+        final Point inputPoint = new Point(0, -1);
+
+        try {
+            field.getFigure(inputPoint);
+            fail();
+        } catch {
+            final InvalidPointException e
+        }
 
 
     }
