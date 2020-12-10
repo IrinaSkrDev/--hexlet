@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class FieldTest {
 
     @Test
-    void getFieldSize() {
+    void getFieldSize() throws Exception {
         final int expectedValue = 3;
         final Field field = new Field();
 
@@ -25,7 +25,7 @@ class FieldTest {
     // }
 
     @Test
-    void setFigure() throws InvalidPointException, PointAlreadyOccupaidEcxeption {
+    void setFigure() throws Exception {
         final Field field = new Field();
         final Point inputPoint = new Point(0, 0);
         final Figure inputFigure = Figure.X;
