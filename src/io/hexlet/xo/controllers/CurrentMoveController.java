@@ -10,7 +10,7 @@ public class CurrentMoveController {
     public Figure currentMove(final Field field) {
         int countFigure = 0;
         for (int i = 0; i < field.getFieldSize(); i++) {
-            countFigure = countFigure + countFigureOnField(field, i)
+            countFigure = countFigure + countFigureOnField(field, i);
         }
         if (countFigure == field.getFieldSize() * field.getFieldSize()) {
             return null;
