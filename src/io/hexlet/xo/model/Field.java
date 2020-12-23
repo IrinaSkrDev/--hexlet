@@ -37,7 +37,7 @@ public class Field {
     }
 
     private boolean checkPoint(final Point point) {
-        return checkCoordinate(point.x, field.length) && checkCoordinate(point.y, field[point.x].length);
+        return checkCoordinate(point.x, field.length - 1) && checkCoordinate(point.y, field.length - 1);
 
     }
 
