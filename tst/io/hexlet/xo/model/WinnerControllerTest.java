@@ -15,7 +15,7 @@ public class WinnerControllerTest {
     public void testGetWinnerWhenWinnerRow() throws Exception {
         final WinnerController winnerController = new WinnerController();
         for (int i = 0; i < 3; i++) {
-            final Field field = new Field(3);
+            final Field<Figure> field = new Field<>(3);
             field.setFigure(Figure.X, new Point(i, 0));
             field.setFigure(Figure.X, new Point(i, 1));
             field.setFigure(Figure.X, new Point(i, 2));
@@ -27,7 +27,7 @@ public class WinnerControllerTest {
     public void testGetWinnerWhenNoWinnerRow() throws Exception {
         final WinnerController winnerController = new WinnerController();
         for (int i = 0; i < 3; i++) {
-            final Field field = new Field(3);
+            final Field<Figure> field = new Field<>(3);
             field.setFigure(Figure.X, new Point(i, 0));
             field.setFigure(Figure.X, new Point(i, 1));
             field.setFigure(Figure.O, new Point(i, 2));
@@ -39,7 +39,7 @@ public class WinnerControllerTest {
     public void testGetWinnerWhenNoWinnerRow2() throws Exception {
         final WinnerController winnerController = new WinnerController();
         for (int i = 0; i < 3; i++) {
-            final Field field = new Field(3);
+            final Field<Figure> field = new Field<>(3);
             field.setFigure(Figure.O, new Point(i, 0));
             field.setFigure(Figure.X, new Point(i, 1));
             field.setFigure(Figure.X, new Point(i, 2));
@@ -51,7 +51,7 @@ public class WinnerControllerTest {
     public void testGetWinnerWhenWinnerColumn() throws Exception {
         final WinnerController winnerController = new WinnerController();
         for (int i = 0; i < 3; i++) {
-            final Field field = new Field(3);
+            final Field<Figure> field = new Field<>(3);
             field.setFigure(Figure.X, new Point(0, i));
             field.setFigure(Figure.X, new Point(1, i));
             field.setFigure(Figure.X, new Point(2, i));
@@ -63,7 +63,7 @@ public class WinnerControllerTest {
     public void testGetWinnerWhenNoWinnerColumn() throws Exception {
         final WinnerController winnerController = new WinnerController();
         for (int i = 0; i < 3; i++) {
-            final Field field = new Field(3);
+            final Field<Figure> field = new Field<>(3);
             field.setFigure(Figure.X, new Point(0, i));
             field.setFigure(Figure.X, new Point(1, i));
             field.setFigure(Figure.O, new Point(2, i));
@@ -74,7 +74,7 @@ public class WinnerControllerTest {
     @Test
     public void testGetWinnerWhenWinnerDiag1() throws Exception {
         final WinnerController winnerController = new WinnerController();
-        final Field field = new Field(3);
+        final Field<Figure> field = new Field<>(3);
         field.setFigure(Figure.X, new Point(0, 0));
         field.setFigure(Figure.X, new Point(1, 1));
         field.setFigure(Figure.X, new Point(2, 2));
@@ -84,7 +84,7 @@ public class WinnerControllerTest {
     @Test
     public void testGetWinnerWhenNoWinnerDiag1() throws Exception {
         final WinnerController winnerController = new WinnerController();
-        final Field field = new Field(3);
+        final Field<Figure> field = new Field<>(3);
         field.setFigure(Figure.X, new Point(0, 0));
         field.setFigure(Figure.X, new Point(1, 1));
         field.setFigure(Figure.O, new Point(2, 2));
@@ -94,7 +94,7 @@ public class WinnerControllerTest {
     @Test
     public void testGetWinnerWhenWinnerDiag2() throws Exception {
         final WinnerController winnerController = new WinnerController();
-        final Field field = new Field(3);
+        final Field<Figure> field = new Field<>(3);
         field.setFigure(Figure.X, new Point(0, 2));
         field.setFigure(Figure.X, new Point(1, 1));
         field.setFigure(Figure.X, new Point(2, 0));
@@ -104,7 +104,7 @@ public class WinnerControllerTest {
     @Test
     public void testGetWinnerWhenNoWinnerDiag2() throws Exception {
         final WinnerController winnerController = new WinnerController();
-        final Field field = new Field(3);
+        final Field<Figure> field = new Field<>(3);
         field.setFigure(Figure.X, new Point(0, 2));
         field.setFigure(Figure.X, new Point(1, 1));
         field.setFigure(Figure.O, new Point(2, 0));

@@ -15,7 +15,7 @@ public class WinnerController {
     int[] countX = new int[]{0, 0, 0, 0};
     int[] countO = new int[]{0, 0, 0, 0};
 
-    public Figure getWinner(final Field field) {
+    public Figure getWinner(final Field<Figure> field) {
         try {
             int size = field.getFieldSize();
             Figure figure;

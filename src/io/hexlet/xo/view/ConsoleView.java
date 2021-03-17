@@ -18,8 +18,8 @@ public class ConsoleView {
     private final WinnerController winnerController = new WinnerController();
     private final MoveController moveController = new MoveController();
 
-    public void show(final Game game) {
-        final Field field = game.getField();
+    public void show(final Game<Figure> game) {
+        final Field<Figure> field = game.getField();
         System.out.format("Game name: %s\n", game.getName());
         for (int x = 0; x < field.getFieldSize(); x++) {
             if (x != 0) {
@@ -32,8 +32,8 @@ public class ConsoleView {
     }
 
 
-    public boolean move(final Game game) {
-        final Field field = game.getField();
+    public boolean move(final Game<Figure> game) {
+        final Field<Figure> field = game.getField();
         final Figure currentFigure = currentMoveController.currentMove(field);
         final Figure winner = winnerController.getWinner(field);
         if (winner != null) {
@@ -73,13 +73,13 @@ public class ConsoleView {
         }
     }
 
-    private void printLine(final Field field,
+    private void printLine(final Field<Figure> field,
                            final int x) {
         for (int y = 0; y < field.getFieldSize(); y++) {
             Figure figure;
 
             try {
-                figure = field.getFigure(new Point(y, x));
+                figure = (Figure) field.getFigure(new Point(y, x));
             } catch (final InvalidPointException e) {
                 e.printStackTrace();
                 throw new RuntimeException(e);
