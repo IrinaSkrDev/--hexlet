@@ -24,10 +24,7 @@ public class ConsoleView {
         final Field<Figure> field = game.getField();
         System.out.format("Game name: %s\n", game.getName());
 
-        System.out.println("Players:");
-        for (Player player : game) {
-            System.out.format("Player name: %s   Figer:  %s:\n", player.getName(), player.getFigure());
-        }
+        printPlayersNameFigure(game);
         for (int x = 0; x < field.getFieldSize(); x++) {
             if (x != 0) {
                 printSeparator();
@@ -104,5 +101,12 @@ public class ConsoleView {
 
     private void printSeparator() {
         System.out.println("~~~~~~~~~~~");
+    }
+
+    static void printPlayersNameFigure(Game<Figure> game) {
+        System.out.println("Players:");
+        for (Player player : game) {
+            System.out.format("Player name: %s   Figer:  %s:\n", player.getName(), player.getFigure());
+        }
     }
 }
