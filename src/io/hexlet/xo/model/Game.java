@@ -1,6 +1,10 @@
 package io.hexlet.xo.model;
 
-public class Game<F> {
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+
+public class Game<F> implements Iterable<Player> {
 
 
     private final Player[] players;
@@ -26,4 +30,9 @@ public class Game<F> {
         return name;
     }
 
+    @Override
+    public Iterator<Player> iterator() {
+        final List<Player> playersList = Arrays.asList(players);
+        return playersList.iterator();
+    }
 }
