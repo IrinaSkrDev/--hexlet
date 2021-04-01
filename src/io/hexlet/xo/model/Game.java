@@ -30,9 +30,34 @@ public class Game<F> implements Iterable<Player> {
         return name;
     }
 
+    // Реализуем свой итератор
     @Override
     public Iterator<Player> iterator() {
-        final List<Player> playersList = Arrays.asList(players);
-        return playersList.iterator();
+        return new PlayerIterator();
     }
+
+    private class PlayerIterator implements Iterator<Player> {
+        int index = 0;
+
+        @Override
+        public boolean hasNext() {
+            return Game.this.players.length > index;
+        }
+
+        @Override
+        public Player next() {
+            return Game.this.players[index++];
+        }
+    }
+
+  /*  @Override
+    public Iterator<Player> iterator() {
+        // Можно сократить запись, а можно расписать, для понимания.
+        // Когда свой иттератор реализовывать не можется, воспользуемся листовым
+       // final List<Player> playersList = Arrays.asList(players);
+       // return playersList.iterator();
+        return Arrays.asList(players).iterator();
+    }*/
+
+
 }
